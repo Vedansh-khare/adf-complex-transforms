@@ -26,13 +26,27 @@
 					"name": "sourceSalesOrderDetail"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_silver_customer_metrics",
+						"type": "DatasetReference"
+					},
+					"name": "sinkSilver"
+				}
+			],
 			"transformations": [
 				{
 					"name": "joinCustOrders"
 				},
 				{
 					"name": "joinOrderDetails"
+				},
+				{
+					"name": "aggSalesMetrics"
+				},
+				{
+					"name": "derivedMetrics"
 				}
 			],
 			"scriptLines": [
@@ -100,11 +114,23 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> joinCustOrders",
-				"joinCustOrders, sourceSalesOrderDetail join(joinCustOrders@SalesOrderID == sourceSalesOrderDetail@SalesOrderID,",
+				"joinCustOrders, sourceSalesOrderDetail join(sourceSalesOrderHeader@SalesOrderID == sourceSalesOrderDetail@SalesOrderID,",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
-				"     broadcast: 'auto')~> joinOrderDetails"
+				"     broadcast: 'auto')~> joinOrderDetails",
+				"joinOrderDetails aggregate(groupBy(sourceCustomer@CustomerID,",
+				"          sourceCustomer@AccountNumber),",
+				"     {Total order} = count(1),",
+				"          {Total revenue} = sum(toDecimal(TotalDue, 10, 2))) ~> aggSalesMetrics",
+				"aggSalesMetrics derive(AvgRevenuePerOrder = {Total revenue}/{Total order}) ~> derivedMetrics",
+				"derivedMetrics sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sinkSilver"
 			]
 		}
 	}
