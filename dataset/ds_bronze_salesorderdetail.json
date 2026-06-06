@@ -13,14 +13,55 @@
 				"fileName": "SalesOrderDetail.csv",
 				"fileSystem": "bronze"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
+			"rowDelimiter": "\n",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
-				"name": "43659\t1\t4911-403C-98\t1\t776\t1\t2024.9940\t.0000\t2024.994000\tB207C96D-D9E6-402B-8470-2CC176C42283\t2022-05-30 00:00:00.000",
+				"name": "SalesOrderID",
+				"type": "String"
+			},
+			{
+				"name": "SalesOrderDetailID",
+				"type": "String"
+			},
+			{
+				"name": "CarrierTrackingNumber",
+				"type": "String"
+			},
+			{
+				"name": "OrderQty",
+				"type": "String"
+			},
+			{
+				"name": "ProductID",
+				"type": "String"
+			},
+			{
+				"name": "SpecialOfferID",
+				"type": "String"
+			},
+			{
+				"name": "UnitPrice",
+				"type": "String"
+			},
+			{
+				"name": "UnitPriceDiscount",
+				"type": "String"
+			},
+			{
+				"name": "LineTotal",
+				"type": "String"
+			},
+			{
+				"name": "rowguid",
+				"type": "String"
+			},
+			{
+				"name": "ModifiedDate",
 				"type": "String"
 			}
 		]
