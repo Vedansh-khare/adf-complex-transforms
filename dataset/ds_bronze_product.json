@@ -13,14 +13,111 @@
 				"fileName": "Product.csv",
 				"fileSystem": "bronze"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
+			"rowDelimiter": "\n",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
-				"name": "1\tAdjustable Race\tAR-5381\t0\t0\t\t1000\t750\t.0000\t.0000\t\t\t\t\t0\t\t\t\t\t\t2019-04-30 00:00:00.000\t\t\t694215B7-08F7-4C0D-ACB1-D734BA44C0C8\t2025-02-07 10:01:36.827",
+				"name": "ProductID",
+				"type": "String"
+			},
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "ProductNumber",
+				"type": "String"
+			},
+			{
+				"name": "MakeFlag",
+				"type": "String"
+			},
+			{
+				"name": "FinishedGoodsFlag",
+				"type": "String"
+			},
+			{
+				"name": "Color",
+				"type": "String"
+			},
+			{
+				"name": "SafetyStockLevel",
+				"type": "String"
+			},
+			{
+				"name": "ReorderPoint",
+				"type": "String"
+			},
+			{
+				"name": "StandardCost",
+				"type": "String"
+			},
+			{
+				"name": "ListPrice",
+				"type": "String"
+			},
+			{
+				"name": "Size",
+				"type": "String"
+			},
+			{
+				"name": "SizeUnitMeasureCode",
+				"type": "String"
+			},
+			{
+				"name": "WeightUnitMeasureCode",
+				"type": "String"
+			},
+			{
+				"name": "Weight",
+				"type": "String"
+			},
+			{
+				"name": "DaysToManufacture",
+				"type": "String"
+			},
+			{
+				"name": "ProductLine",
+				"type": "String"
+			},
+			{
+				"name": "Class",
+				"type": "String"
+			},
+			{
+				"name": "Style",
+				"type": "String"
+			},
+			{
+				"name": "ProductSubcategoryID",
+				"type": "String"
+			},
+			{
+				"name": "ProductModelID",
+				"type": "String"
+			},
+			{
+				"name": "SellStartDate",
+				"type": "String"
+			},
+			{
+				"name": "SellEndDate",
+				"type": "String"
+			},
+			{
+				"name": "DiscontinuedDate",
+				"type": "String"
+			},
+			{
+				"name": "rowguid",
+				"type": "String"
+			},
+			{
+				"name": "ModifiedDate",
 				"type": "String"
 			}
 		]
