@@ -16,29 +16,36 @@
 			"columnDelimiter": "\t",
 			"rowDelimiter": "\n",
 			"escapeChar": "\\",
-			"firstRowAsHeader": false,
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
+				"name": "CustomerID",
 				"type": "String"
 			},
 			{
+				"name": "PersonID",
 				"type": "String"
 			},
 			{
+				"name": "StoreID",
 				"type": "String"
 			},
 			{
+				"name": "TerritoryID",
 				"type": "String"
 			},
 			{
+				"name": "AccountNumber",
 				"type": "String"
 			},
 			{
+				"name": "rowguid",
 				"type": "String"
 			},
 			{
+				"name": "ModifiedDate",
 				"type": "String"
 			}
 		]
